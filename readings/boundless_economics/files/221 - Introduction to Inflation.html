@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<!--[if IE]><html class="ie"><![endif]-->
+<!--[if !IE]> --><html class="not-ie"><!-- <![endif]-->
+<head>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"2d4f7e7bad","applicationID":"8953552","transactionName":"IFdcREJZCV1dExtQWA1MV15EGQZeVgJRQ0MQF0FYX0E=","queueTime":21,"applicationTime":138,"agent":"js-agent.newrelic.com/nr-768.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Uw4HV1BXGwsJUVJXAgM="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:24,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:11,2:10,3:8,4:12,5:3,6:25,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){if(window.addEventListener){var e=t("handle"),n=t("ee");t(1),window.addEventListener("click",function(){e("inc",["ck"])},!1),window.addEventListener("hashchange",function(){e("inc",["hc"])},!1),n.on("pushState-start",function(){e("inc",["ps"])})}},{1:9,ee:"QJf3ax",handle:"D5DuLP"}],6:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],7:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=Event;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:11,2:10,3:9,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t,e){function n(){return s}if(t[1]){var r=t[1];if("function"==typeof r){var s=a(r,"nr@wrapped",function(){return i(r,"fn-",n,r.name||"anonymous")});this.wrapped=t[1]=s,o.emit("initEventContext",[t,e],this.wrapped)}else"function"==typeof r.handleEvent&&i.inPlace(r,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:26,ee:"QJf3ax",gos:"7eSDFh"}],9:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:26,ee:"QJf3ax"}],10:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:26,ee:"QJf3ax"}],11:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){function r(){return a}this.ctx={};var a={"nr@context":this.ctx};o.emit("initTimerContext",[t,n],a),t[0]=i(t[0],"fn-",r,n)}var o=t("ee").create(),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:26,ee:"QJf3ax"}],12:[function(t,e){function n(){f.inPlace(this,p,"fn-",o)}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:8,2:26,ee:"QJf3ax"}],13:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1),u=window.XMLHttpRequest;t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof u&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:14,3:12,4:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],14:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],15:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:24,2:25,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-768.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:24,2:15,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],24:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],25:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],26:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:25,ee:"QJf3ax"}]},{},["G9z0Bl",4,13,7,6,5]);</script>
+<meta charset='utf-8'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+<!-- Icons -->
+<link href='https://assets.boundless.com/assets/favicon-0bbf3119d402dfede65ef78d7ff16ec6.png' rel='shortcut icon'>
+<link href='https://assets.boundless.com/touch_icons/Icon-60.png' rel='apple-touch-icon'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-29-209eb3ec572841a3a9e7928ff3f22064.png' rel='apple-touch-icon' sizes='29x29'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-29@2x-1b89d3404ba2f99d08481849f1bfd4b8.png' rel='apple-touch-icon' sizes='58x58'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-29@3x-439be5f6a5f93787dc76740240c33c25.png' rel='apple-touch-icon' sizes='87x87'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-40-2022cb3790f6f6976b7ffa49ea1695a1.png' rel='apple-touch-icon' sizes='40x40'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-40@2x-1e913d5396b7f4235812167fd703734c.png' rel='apple-touch-icon' sizes='80x80'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-40@3x-f5473e60f3a2fc17bb929a1aaf06a77b.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='https://assets.boundless.com/touch_icons/Icon-60.png' rel='apple-touch-icon' sizes='60x60'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-60@2x-f5473e60f3a2fc17bb929a1aaf06a77b.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-60@3x-babf7d734fd65f5dfbf31c90f29b939c.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-76-830da169220da03ad5bef2f7eaf2ee38.png' rel='apple-touch-icon' sizes='76x76'>
+<link href='https://assets.boundless.com/assets/touch_icons/Icon-76@2x-4d598129316f3dd84dd0cbddadd7f00e.png' rel='apple-touch-icon' sizes='152x152'>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Ef7TIvxFbGPkqr+x+91N+kPjBVhO238BvJzJ8a0+8ltWIFmb4ThiAzVBSdkCSO1hO+G67CBc8RmyHwRu7XdFoQ==" />
+<!-- iOS App Reference -->
+<!-- Stripe -->
+<meta content='pk_Y0xOTxNRUMiV2gwrFLF0NoJjeaeCg' name='stripe-key'>
+<!-- Chrome frame -->
+<meta content='IE=edge,chrome=1' httpequiv='X-UA-Compatible'>
+<!-- Page Title -->
+<title>Introduction to Inflation</title>
+<!-- Meta Description -->
+<meta content='Learn more about introduction to inflation in the Boundless open textbook. ' name='description'>
+<!-- Meta Keywords -->
+<link rel="stylesheet" media="screen" href="https://assets.boundless.com/assets/global/common/julia-85f2680e135574dd7f88788bed864eb0.css" />
+<link rel="stylesheet" media="all" href="https://assets.boundless.com/assets/shared-417fc7be7c0fc5ba73fdb310d75b6e34.css" />
+<link rel="stylesheet" media="all" href="https://assets.boundless.com/assets/platform/common/base-b6aabbda4cd5a3dc5df42dc00e6e68cf.css" />
+<link rel="stylesheet" media="all" href="https://assets.boundless.com/assets/platform/application-419a7c319332673e83e2342dabcbaed5.css" />
+
+<!-- Segment.io snippet -->
+<script>
+  !(function () {window.analytics||(window.analytics=[]),window.analytics.methods=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group","on","once","off"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var method=window.analytics.methods[i];window.analytics[method]=window.analytics.factory(method)}window.analytics.load=function(t){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)},window.analytics.SNIPPET_VERSION="2.0.8";
+    window.analytics.load("dv5j6lr4ku");
+    window.analytics.page();
+  })();
+</script>
+
+<link href='/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/' rel='canonical'>
+<meta content='summary' name='twitter:card'>
+<meta content='Learn more about introduction to inflation in the Boundless open textbook. ' name='twitter:description'>
+<meta content='@goboundless' name='twitter:site'>
+<meta content='Introduction to Inflation - Boundless Open Textbook' property='og:title'>
+<meta content='Boundless' property='og:site_name'>
+<meta content=' Read more about introduction to inflation in the Boundless open textbook.' property='og:description'>
+<meta content='http://figures.boundless.com/20516/full/push-pull-inflation.jpeg' name='twitter:image'>
+<meta content='http://figures.boundless.com/20516/full/push-pull-inflation.jpeg' property='og:image'>
+<meta content='Introduction to Inflation' name='twitter:title'>
+<!-- /google scholar meta -->
+<meta content='Introduction to Inflation' name='citation_title'>
+<meta content='Boundless' name='citation_publisher'>
+<meta content='Boundless' name='citation_author'>
+<meta content='2015/07/21' name='citation_publication_date'>
+<meta content='Boundless Economics' name='citation_inbook_title'>
+<meta content='en' name='citation_language'>
+<meta content='initial-scale=1' name='viewport'>
+
+<script>
+  window.PageData = window.PageData || {};
+</script>
+</head>
+<body class='not-logged-in boundless-content-platform&#x000A; '>
+<!-- /This haml is based on a "half implementation" of header features. See TODO items below for -->
+<!-- /placeholders that will be used once the header is fully implemented. https://trello.com/c/SsmKHIvU -->
+<header class='fw_header navbar' id='header'>
+<div class='rainbow-road'></div>
+<div class='viewport-padding'>
+<nav class='navbar-inner navbar__first'>
+<div class='navbar__first__left'>
+<a class="navbar__app-zone navbar__app-zone__main" href="/"><div class='navbar__app-zone navbar__app-zone__main'>
+<div class='navbar__app-zone__icon'></div>
+<div class='navbar__app-zone__label'><div class='navbar__app-zone__label__brand'></div><div class='navbar__app-zone__label__zone'></div>
+</div>
+<div class='navbar__app-zone-dropdown'>
+<!-- /TODO later. see card -->
+</div>
+</div>
+</a><div class='navbar__search navbar__icon__menu'>
+<div class='navbar__search__inner'>
+<i class='icon-search navbar__search__icon navbar__icon'></i>
+</div>
+</div>
+</div>
+<div class='navbar__first__middle-floats'>
+<!-- /The "middle floats" are the menu items that get collapsed into the hamburger, and/or moved to the -->
+<!-- /navbar__second level for mobile screens -->
+<div class='navbar__middle-floats'>
+<form action='/search/'>
+<div class='navbar__search__input__wrap'>
+<input class='navbar__search__input' name='q' type='text'>
+<div class='navbar__search__input__close boundless-icon-x'></div>
+</div>
+<input id='header-search-filter' name='filter' type='hidden' value='books,concepts,quizzes,questions,issues,profiles'>
+</form>
+<div class='navbar__destination-item navbar__middle-floats__item navbar__subjects'>
+<div class='navbar__destination-item__inner'>
+<a data-push="true" href="/subjects/"><div class='navbar__item-label'>
+Subjects
+</div>
+</a><div class='navbar__dropdown__cta'>
+<i class='icon-caret-right'></i>
+<div class='navbar__dropdown navbar__subjects__dropdown'>
+<div class='navbar__dropdown__triangle'></div>
+<ul class='navbar__dropdown__list'>
+<div class='scroll-gradient'></div>
+<div class='navbar__dropdown__inner'>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/accounting/">Accounting</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/algebra/">Algebra</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/art-history/">Art History</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/biology/">Biology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/business/">Business</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/calculus/">Calculus</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/chemistry/">Chemistry</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/communications/">Communications</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/computer-science/">Computer Science</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/economics/">Economics</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/education/">Education</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/finance/">Finance</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/management/">Management</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/marketing/">Marketing</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/microbiology/">Microbiology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/music/">Music</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/philosophy/">Philosophy</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/physics/">Physics</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/physiology/">Physiology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/political-science/">Political Science</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/psychology/">Psychology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/sociology/">Sociology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/statistics/">Statistics</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/u-s-history/">U.S. History</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/world-history/">World History</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/writing/">Writing</a></li>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class='navbar__contribute navbar__destination-item navbar__middle-floats__item'>
+<div class='navbar__destination-item__inner'>
+<a data-push="true" data-track="Header:clicked_contribute" href="/issues/"><div class='navbar__item-label'>
+Contribute
+</div>
+</a></div>
+</div>
+</div>
+
+</div>
+<div class='navbar__first__right'>
+<div class='navbar__hamburger navbar__icon__menu'>
+<i class='icon-reorder navbar__icon'></i>
+</div>
+<div class='navbar__login'>
+<a data-popup="register" data-redirect-reload="true" data-start-event="clicked_sign_up_in_header" class="header__sign-up-link navbar__login__link" href="#register"><i class='boundless-icon-signup'></i>
+<span class='lbl'>Sign Up</span>
+</a><a data-popup="login" data-redirect-reload="true" class="header__login-link navbar__login__link" href="#login"><i class='icon-signin'></i>
+<span class='lbl'>Login</span>
+</a></div>
+</div>
+</nav>
+</div>
+<nav class='navbar-inner navbar__second'>
+<div class='navbar__second__middle-floats'>
+<!-- /The "middle floats" are the menu items that get collapsed into the hamburger, and/or moved to the -->
+<!-- /navbar__second level for mobile screens -->
+<div class='navbar__middle-floats'>
+<form action='/search/'>
+<div class='navbar__search__input__wrap'>
+<input class='navbar__search__input' name='q' type='text'>
+<div class='navbar__search__input__close boundless-icon-x'></div>
+</div>
+<input id='header-search-filter' name='filter' type='hidden' value='books,concepts,quizzes,questions,issues,profiles'>
+</form>
+<div class='navbar__destination-item navbar__middle-floats__item navbar__subjects'>
+<div class='navbar__destination-item__inner'>
+<a data-push="true" href="/subjects/"><div class='navbar__item-label'>
+Subjects
+</div>
+</a><div class='navbar__dropdown__cta'>
+<i class='icon-caret-right'></i>
+<div class='navbar__dropdown navbar__subjects__dropdown'>
+<div class='navbar__dropdown__triangle'></div>
+<ul class='navbar__dropdown__list'>
+<div class='scroll-gradient'></div>
+<div class='navbar__dropdown__inner'>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/accounting/">Accounting</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/algebra/">Algebra</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/art-history/">Art History</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/biology/">Biology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/business/">Business</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/calculus/">Calculus</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/chemistry/">Chemistry</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/communications/">Communications</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/computer-science/">Computer Science</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/economics/">Economics</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/education/">Education</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/finance/">Finance</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/management/">Management</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/marketing/">Marketing</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/microbiology/">Microbiology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/music/">Music</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/philosophy/">Philosophy</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/physics/">Physics</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/physiology/">Physiology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/political-science/">Political Science</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/psychology/">Psychology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/sociology/">Sociology</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/statistics/">Statistics</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/u-s-history/">U.S. History</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/world-history/">World History</a></li>
+<li><a class="navbar__dropdown__list__item" data-push="true" href="/writing/">Writing</a></li>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class='navbar__contribute navbar__destination-item navbar__middle-floats__item'>
+<div class='navbar__destination-item__inner'>
+<a data-push="true" data-track="Header:clicked_contribute" href="/issues/"><div class='navbar__item-label'>
+Contribute
+</div>
+</a></div>
+</div>
+</div>
+
+</div>
+<div class='scroll-gradient--h'></div>
+</nav>
+</header>
+
+<div id='main' role='main'>
+
+<div class='bcp-content' id='wiselinks-container'>
+<div class='bcp__concept content-under-navbar'>
+<div class='viewport-padding'>
+<div class='container site-width'>
+<div class='content__breadcrumbs'>
+<span class='content__breadcrumbs--inner'>
+<div class='gnome__breadcrumb-mod content__breadcrumb' itemscope itemtype='http://data-vocabulary.org/Breadcrumb'>
+<a itemprop="url" class="content__breadcrumb-link" data-push="true" data-track="Sneak:clicked_breadcrumb" data-track-properties-json="{&quot;root_class&quot;: &quot;Concept&quot;, &quot;breadcrumb_index&quot;: 0}" href="/economics/"><span itemprop='title'>Economics</span>
+</a></div>
+<div class='gnome__breadcrumb-mod content__breadcrumb' itemscope itemtype='http://data-vocabulary.org/Breadcrumb'>
+<a itemprop="url" class="content__breadcrumb-link" data-push="true" data-track="Sneak:clicked_breadcrumb" data-track-properties-json="{&quot;root_class&quot;: &quot;Concept&quot;, &quot;breadcrumb_index&quot;: 1}" href="/economics/textbooks/"><span itemprop='title'>Textbooks</span>
+</a></div>
+<div class='gnome__breadcrumb-mod content__breadcrumb' itemscope itemtype='http://data-vocabulary.org/Breadcrumb'>
+<a itemprop="url" class="content__breadcrumb-link" data-push="true" data-track="Sneak:clicked_breadcrumb" data-track-properties-json="{&quot;root_class&quot;: &quot;Concept&quot;, &quot;breadcrumb_index&quot;: 2}" href="/economics/textbooks/boundless-economics-textbook/"><span itemprop='title'>Boundless Economics</span>
+</a></div>
+<div class='gnome__breadcrumb-mod content__breadcrumb' itemscope itemtype='http://data-vocabulary.org/Breadcrumb'>
+<a itemprop="url" class="content__breadcrumb-link" data-push="true" data-track="Sneak:clicked_breadcrumb" data-track-properties-json="{&quot;root_class&quot;: &quot;Concept&quot;, &quot;breadcrumb_index&quot;: 3}" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/"><span itemprop='title'>Measuring Output and Income</span>
+</a></div>
+<div class='gnome__breadcrumb-mod content__breadcrumb' itemscope itemtype='http://data-vocabulary.org/Breadcrumb'>
+<a itemprop="url" class="content__breadcrumb-link" data-push="true" data-track="Sneak:clicked_breadcrumb" data-track-properties-json="{&quot;root_class&quot;: &quot;Concept&quot;, &quot;breadcrumb_index&quot;: 4}" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/"><span itemprop='title'>Cost of Living</span>
+</a></div>
+</span>
+<span class='content__breadcrumbs-caret'>
+<i class='icon-caret-down'></i>
+</span>
+</div>
+<div class='content__breadcrumbs-dropdown'>
+<a class="content__breadcrumbs-dropdown__link" data-push="true" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/"><div class='chevron'>
+<i class='icon-angle-right'></i>
+</div>
+<span>Economics</span>
+<span>Textbooks</span>
+<span>Boundless Economics</span>
+<span>Measuring Output and Income</span>
+<span>Cost of Living</span>
+</a><a class="content__breadcrumbs-dropdown__link" data-push="true" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/"><div class='chevron'>
+<i class='icon-angle-right'></i>
+</div>
+<span>Economics</span>
+<span>Textbooks</span>
+<span>Boundless Economics</span>
+<span>Measuring Output and Income</span>
+</a><a class="content__breadcrumbs-dropdown__link" data-push="true" href="/economics/textbooks/boundless-economics-textbook/"><div class='chevron'>
+<i class='icon-angle-right'></i>
+</div>
+<span>Economics</span>
+<span>Textbooks</span>
+<span>Boundless Economics</span>
+</a><a class="content__breadcrumbs-dropdown__link" data-push="true" href="/economics/textbooks/"><div class='chevron'>
+<i class='icon-angle-right'></i>
+</div>
+<span>Economics</span>
+<span>Textbooks</span>
+</a><a class="content__breadcrumbs-dropdown__link" data-push="true" href="/economics/"><div class='chevron'>
+<i class='icon-angle-right'></i>
+</div>
+<span>Economics</span>
+</a></div>
+</div>
+</div>
+
+<div class='content__top'>
+<div class='viewport-padding'>
+<div class='site-width container'>
+<div class='content__meta'>
+<div class='content__meta-icon'>
+<i class='boundless-icon-concept'></i>
+</div>
+<div class='content__meta-inner'>
+<div class='content__meta-line'>
+<span class='content__meta__type'>Concept</span>
+<span class='content__meta__version'>Version 5</span>
+</div>
+<div class='content__creator'>
+<span>Created by Boundless</span>
+</div>
+</div>
+</div>
+<div class='content__meta__right'>
+<div class='content__meta__favorite-button-container'>
+<div class='content-button__wrapper'>
+<a class='content-button'>
+<i class='content-button__icon boundless-icon-star'></i>
+<span class='content-button__label'>
+Favorite
+</span>
+</a>
+<div class='content-button__count'>
+0
+</div>
+</div>
+</div>
+
+<div class='content__meta__watch-button-container'>
+<div class='content-button__wrapper' id='concept-359'>
+<a class='content-button'>
+<i class='content-button__icon boundless-icon-eye'></i>
+<span class='content-button__label'>
+<span>Watch</span>
+</span>
+</a>
+<div class='content-button__count'>
+0
+</div>
+</div>
+</div>
+
+<div class='content__meta__action-info__cont'>
+<a class='content-action-info__toggle'>
+<i class='icon-info'></i>
+<i class='icon-caret-down'></i>
+</a>
+</div>
+<div class='content-action-info__panel__cont' style='display: none'>
+<div class='callout-thingy'></div>
+<div class='content-action-info__panel__header'>
+<i class='icon-remove'></i>
+About Watch and Favorite
+</div>
+<div class='content-action-info__panel__body'>
+<div class='content-action-info__panel__section'>
+<h6>
+<i class='boundless-icon-eye'></i>
+Watch
+</h6>
+<p>Watching this resources will notify you when proposed changes or new versions are created so you can keep track of improvements that have been made.</p>
+</div>
+<div class='content-action-info__panel__section'>
+<h6>
+<i class='boundless-icon-star'></i>
+Favorite
+</h6>
+<p>Favoriting this resource allows you to save it in the “My Resources” tab of your account. There, you can easily access this resource later when you’re ready to customize it or assign it to your students.</p>
+</div>
+</div>
+</div>
+</div>
+<h1 class='content__title'>Introduction to Inflation</h1>
+</div>
+</div>
+</div>
+<div class='viewport-padding'>
+<div class='container concept-content-width clearfix'>
+<div class='content-nav'>
+<div class='content-nav__inner'>
+<a data-push="true" class="content-nav__link current-nav-link" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/"><i class='link-icon boundless-icon-read'></i>
+<span class='lbl'>Read</span>
+</a><h5 class='content-nav__header'></h5>
+<a class="content-nav__link content-nav__link--edit" rel="nofollow" data-track="Sisyphus:clicked_edit_tab" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/issues/new/"><i class='link-icon boundless-icon-proposechange'></i>
+<span class='lbl'>Edit</span>
+</a><a data-push="true" data-track="Sisyphus:clicked_feedback_tab" class="content-nav__link content-nav__link--feedback" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/issues/open/"><i class='link-icon boundless-icon-feedback'></i>
+<span class='lbl'>Feedback</span>
+</a><a data-push="true" rel="nofollow" class="content-nav__link " href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/history/"><i class='link-icon boundless-icon-history'></i>
+<span class='lbl'>Version History</span>
+</a><a data-push="true" rel="nofollow" class="content-nav__lesson-usage content-nav__link " href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/usage/"><i class='link-icon boundless-icon-usage'></i>
+<span class='lbl'>Usage</span>
+</a><h5 class='content-nav__header mq__fixed'></h5>
+<div class='sis__sidebar-ad mq__fixed'>
+<div id='div-gpt-ad-1414682687232-0' style='width:160px; height:600px;'></div>
+</div>
+<div class="ad-actions"><a data-popup="register" data-redirect-destination="https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/" data-skip-additional-info="true" data-skip-role-selector="true" data-start-event="Sisyphus:clicked_reg_to_hide_ads" data-start-event-properties-json="{&quot;ad_location&quot;:&quot;Concept leaderboard&quot;}" href="https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/">Register for FREE to remove ads and unlock more features!</a> <a class="nowrap" data-popover="remove-ads" data-placement="bottom" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/">Learn more <i class="icon-question-sign"></i></a></div>
+</div>
+</div>
+
+<div class='nav-right__sidebar-margin'>
+<!--
+Template Version 0.3
+-->
+<div class='sis__ad-leaderboard mq__no-phone'>
+<div class='sis__ad'>
+<div id='div-gpt-ad-1423749603292-0' style='width:728px; height:90px;'></div>
+</div>
+<div class="ad-actions"><a data-popup="register" data-redirect-destination="https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/" data-skip-additional-info="true" data-skip-role-selector="true" data-start-event="Sisyphus:clicked_reg_to_hide_ads" data-start-event-properties-json="{&quot;ad_location&quot;:&quot;Concept leaderboard&quot;}" href="https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/">Register for FREE to remove ads and unlock more features!</a> <a class="nowrap" data-popover="remove-ads" data-placement="bottom" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/">Learn more <i class="icon-question-sign"></i></a></div>
+</div>
+<div class='content__actions'>
+<div class='content__action'>
+<a class='btn btn-green content__action-btn content__action-btn__assign' data-json-concept-reading-lesson='{"subject_tag_id":56,"book_id":1515,"chapter_id":19,"section_id":95,"concept_id":359,"lesson_duration":"TODO","lesson_title":"Introduction to Inflation","body":"TODO","activity":"reading","section_path":"/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/"}' data-json-section-reading-lesson='{"subject_tag_id":56,"book_id":1515,"chapter_id":19,"section_id":95,"lesson_duration":"TODO","lesson_title":"Cost of Living","body":"TODO","activity":"reading"}' data-json='{"subject_tag_id":56,"book_id":1515,"chapter_id":19,"section_id":95,"concept_id":359,"lesson_duration":"TODO","lesson_title":"Introduction to Inflation","body":"TODO","activity":"reading","section_path":"/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/"}' data-popup='assign_lesson' data-resource-type='reading' data-track-do-redirect='false' data-track-properties-json='{"inline_resource": "reading"}' data-track='Gnome:clicked_teaching_resources_inline_ad'>
+<i class='icon-calendar-empty'></i>
+<span>Assign Concept Reading</span>
+</a>
+</div>
+<div class='content__action'>
+<a class="btn content__action-btn content__action-btn__quiz " data-track="Gnome:clicked_teaching_resources_inline_ad" data-track-properties-json="{&quot;inline_resource&quot;: &quot;quiz&quot;}" href="/quizzes/cost-of-living-quiz-93094/"><i class='boundless-icon-quiz-righttab'></i>
+View Quiz
+</a></div>
+<div class='content__action'>
+<a class="btn content__action-btn content__action-btn__ppt " data-track="Gnome:clicked_teaching_resources_inline_ad" data-track-properties-json="{&quot;inline_resource&quot;: &quot;ppt&quot;}" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/cost-of-living-95-powerpoint-templates/"><i class='boundless-icon-ppt-righttab'></i>
+View <span>PowerPoint</span> Template
+</a></div>
+</div>
+<div class='bcp-concept--content-area bcp-concept--content-display'>
+<div class='bcp-concept--brief-container'>
+<h2 class='bcp-concept--brief'><p>Inflation is a persistent increase in the general price level, and has three varieties: demand-pull, cost-push, and built-in.</p></h2>
+</div>
+<div class='bcp-concept--smartnotes'>
+<div class='bcp-concept--learning-objectives'>
+<h4 class='bcp-concept--minor-heading'>Learning Objective</h4>
+<ul class='bcp-concept--learning-objectives-list'>
+<li class='bcp-concept__smartnote-list-item'>
+<p>Distinguish between demand-pull and cost-push inflation</p>
+</li>
+</ul>
+</div>
+<hr class='concept-smartnotes__rule'>
+<div class='bcp-concept--key-points'>
+<h4 class='bcp-concept--minor-heading'>Key Points</h4>
+<ul class='bcp-concept--key-points-list'><ul>
+  <li><a class="keyterm__mention" href="/economics/definition/inflation" data-push="true" data-track="Sneak:clicked_mentioned_key_term">Inflation</a> is an increase in <a class="keyterm__mention" href="/economics/definition/price" data-push="true" data-track="Sneak:clicked_mentioned_key_term">price</a> levels, which decreases the real value, or <a class="keyterm__mention" href="/economics/definition/purchasing-power" data-push="true" data-track="Sneak:clicked_mentioned_key_term">purchasing power</a>, of money.</li>
+  <li><a class="keyterm__mention" href="/economics/definition/demand" data-push="true" data-track="Sneak:clicked_mentioned_key_term"></a><a class="keyterm__mention" href="/economics/definition/demand-pull-inflation" data-push="true" data-track="Sneak:clicked_mentioned_key_term">Demand</a><a class="keyterm__mention" href="/economics/definition/demand-pull-inflation" data-push="true" data-track="Sneak:clicked_mentioned_key_term">-pull inflation</a> is an increase in price levels due to an increase in <a class="keyterm__mention" href="/economics/definition/aggregate" data-push="true" data-track="Sneak:clicked_mentioned_key_term"></a><a class="keyterm__mention" href="/economics/definition/aggregate-demand" data-push="true" data-track="Sneak:clicked_mentioned_key_term">aggregate</a><a class="keyterm__mention" href="/economics/definition/aggregate-demand" data-push="true" data-track="Sneak:clicked_mentioned_key_term"> demand</a> when the employment level is full or close to full.</li>
+  <li><a class="keyterm__mention" href="/economics/definition/cost" data-push="true" data-track="Sneak:clicked_mentioned_key_term"></a><a class="keyterm__mention" href="/economics/definition/cost-push-inflation" data-push="true" data-track="Sneak:clicked_mentioned_key_term">Cost</a><a class="keyterm__mention" href="/economics/definition/cost-push-inflation" data-push="true" data-track="Sneak:clicked_mentioned_key_term">-push inflation</a> is an increase in price levels due to a decrease in <a class="keyterm__mention" href="/economics/definition/aggregate-supply" data-push="true" data-track="Sneak:clicked_mentioned_key_term">aggregate </a><a class="keyterm__mention" href="/economics/definition/supply" data-push="true" data-track="Sneak:clicked_mentioned_key_term">supply</a>. Generally, this occurs due to <a class="keyterm__mention" href="/economics/definition/supply-shock" data-push="true" data-track="Sneak:clicked_mentioned_key_term">supply </a><a class="keyterm__mention" href="/economics/definition/shock" data-push="true" data-track="Sneak:clicked_mentioned_key_term">shocks</a>, or an increase in the price of production <a class="keyterm__mention" href="/economics/definition/input" data-push="true" data-track="Sneak:clicked_mentioned_key_term">inputs</a>.</li>
+</ul></ul>
+</div>
+<hr class='concept-smartnotes__rule'>
+<h4 class='bcp-concept--minor-heading'>Terms</h4>
+<ul class='unstyled key_terms clearfix'>
+<li class='bcp-concept__smartnote-list-item'>
+<a class="keyterm" data-push="true" href="/definition/cost-push-inflation/">cost-push inflation</a>
+<p class='definition'><p>A rise in the price level for goods and services in an economy due to increases in the costs of production.</p></p>
+</li>
+<li class='bcp-concept__smartnote-list-item'>
+<a class="keyterm" data-push="true" href="/definition/demand-pull-inflation/">demand-pull inflation</a>
+<p class='definition'><p>A rise in the price level for goods and services in an economy due to greater demand than the economy's ability to produce those goods and services.</p></p>
+</li>
+<li class='bcp-concept__smartnote-list-item'>
+<a class="keyterm" data-push="true" href="/definition/inflation/">inflation</a>
+<p class='definition'><p>An increase in the general level of prices or in the cost of living.</p></p>
+</li>
+</ul>
+<hr class='concept-smartnotes__rule'>
+<div class='flagger__flag-container smartnotes'></div>
+</div>
+</div>
+<div class='bcp-concept--content-area bcp-concept--content-display'>
+<div class='sis__ad-fulltext'>
+<div class='sis__ad'>
+<div id='div-gpt-ad-1425409301314-0' style='width:336px; height:280px;'></div>
+</div>
+<div class="ad-actions"><a data-popup="register" data-redirect-destination="https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/" data-skip-additional-info="true" data-skip-role-selector="true" data-start-event="Sisyphus:clicked_reg_to_hide_ads" data-start-event-properties-json="{&quot;ad_location&quot;:&quot;Concept leaderboard&quot;}" href="https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/">Register for FREE to remove ads and unlock more features!</a> <a class="nowrap" data-popover="remove-ads" data-placement="bottom" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/">Learn more <i class="icon-question-sign"></i></a></div>
+</div>
+<h4 class='bcp-concept--minor-heading'>Full Text</h4>
+<div class='bcp-concept--fulltext'><p>In economics, inflation is a persistent increase in the general price level of goods and services in an economy over a period of time. When the general price level rises, each unit of <a class="keyterm__mention" href="/economics/definition/currency" data-push="true" data-track="Sneak:clicked_mentioned_key_term">currency</a> buys fewer goods and services. Consequently, inflation reflects a reduction in the purchasing power per unit of money; it is a loss of real value, as a single dollar is able to purchase fewer goods than it previously could.</p><h2>Types of Inflation</h2><p>The reasons for inflation depend on supply and demand. Depending on the type of inflation, changes in either supply or demand can create an increase in the price level of goods and services. In <a class="keyterm__mention" href="/economics/definition/keynesian" data-push="true" data-track="Sneak:clicked_mentioned_key_term"></a><a class="keyterm__mention" href="/economics/definition/keynesian-economics" data-push="true" data-track="Sneak:clicked_mentioned_key_term">Keynesian</a><a class="keyterm__mention" href="/economics/definition/keynesian-economics" data-push="true" data-track="Sneak:clicked_mentioned_key_term"> economics</a>, there are three types of inflation.</p><h2>Demand-Pull Inflation</h2><p>Demand-pull inflation is inflation that occurs when total demand for goods and services exceeds the economy's <a class="keyterm__mention" href="/economics/definition/capacity" data-push="true" data-track="Sneak:clicked_mentioned_key_term">capacity</a> to produce those goods. Put another way, there is "too much money chasing too few goods. " Typically, demand-pull inflation occurs when <a class="keyterm__mention" href="/economics/definition/unemployment" data-push="true" data-track="Sneak:clicked_mentioned_key_term">unemployment</a> is low or falling. The increases in employment raise aggregate demand, which leads to increased hiring to expand the level of production. Eventually, production cannot keep pace with aggregate demand because of capacity constraints, so prices rise .</p><a href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/images/demand-pull-inflation/" data-push="true" data-global-id="gid://boundless/Image/20516"><div class="atom__components__figure" data-global-id="gid://boundless/Image/20516">
+  <div class="atom__components__figure__cont">
+    <img class="atom__components__figure__image" src="//figures.boundless.com/20516/large/push-pull-inflation.jpe">
+    <div class="atom__components__document">
+      <h2>Demand-Pull Inflation</h2>
+      <p>Demand-pull inflation is caused by an increase in aggregate demand. As demand increases, so does the price level.</p>
+    </div>
+  </div>
+</div></a><h2>Cost-Push Inflation</h2><p>Cost-push inflation occurs when there is an increase in the costs of production. Unlike demand-pull inflation, cost-push inflation is not "too much money chasing too few goods," but rather, a decrease in the supply of goods, which raises prices .</p><a href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/images/cost-push-inflation/" data-push="true" data-global-id="gid://boundless/Image/20520"><div class="atom__components__figure" data-global-id="gid://boundless/Image/20520">
+  <div class="atom__components__figure__cont">
+    <img class="atom__components__figure__image" src="//figures.boundless.com/20520/raw/as-ad-cost-push.svg">
+    <div class="atom__components__document">
+      <h2>Cost-Push Inflation</h2>
+      <p>As the costs of production inputs rises, aggregate supply can decrease, which increases price levels.</p>
+    </div>
+  </div>
+</div></a><p>The reason for decreases in supply are usually related to increases in the prices of inputs. One major reason for cost-push inflation are supply shocks. A supply shock is an event that suddenly changes the price of a <a class="keyterm__mention" href="/economics/definition/commodity" data-push="true" data-track="Sneak:clicked_mentioned_key_term">commodity</a> or service. (sudden supply decrease) will raise prices and shift the aggregate <a class="keyterm__mention" href="/economics/definition/supply-curve" data-push="true" data-track="Sneak:clicked_mentioned_key_term">supply curve</a> to the left. One historical example of this is the oil crisis of the 1970's, when the price of oil in the U.S. surged. Because oil is integral to many industries, the price increase led to large increases in the costs of production, which translated to higher price levels.</p><h2>Built-In Inflation</h2><p>Built-in inflation is the result of adaptive expectations. If workers expect there to be inflation, they will negotiate for wages increasing at or above the rate of inflation (so as to avoid losing purchasing power). Their employers then pass the higher <a class="keyterm__mention" href="/economics/definition/labor" data-push="true" data-track="Sneak:clicked_mentioned_key_term">labor</a> costs on to customers through higher prices, which actually reflects inflation. Thus, there is a cycle of expectations and inflation driving one another.</p></div>
+</div>
+<div class='flagger__flag-container fulltext'></div>
+<div class='sneak__assign-reading-footer'>
+<a class='btn btn-green content__action-btn' data-json-concept-reading-lesson='{"subject_tag_id":56,"book_id":1515,"chapter_id":19,"section_id":95,"concept_id":359,"lesson_duration":"TODO","lesson_title":"Introduction to Inflation","body":"TODO","activity":"reading","section_path":"/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/"}' data-json-section-reading-lesson='{"subject_tag_id":56,"book_id":1515,"chapter_id":19,"section_id":95,"lesson_duration":"TODO","lesson_title":"Cost of Living","body":"TODO","activity":"reading"}' data-json='{"subject_tag_id":56,"book_id":1515,"chapter_id":19,"section_id":95,"concept_id":359,"lesson_duration":"TODO","lesson_title":"Introduction to Inflation","body":"TODO","activity":"reading","section_path":"/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/"}' data-popup='assign_lesson' data-position='bottom' data-resource-type='reading'>
+<i class='icon-calendar-empty'></i>
+<span>Assign Concept Reading</span>
+</a>
+<p class='sneak__assign-reading-footer-text'>Assign just this concept or entire chapters to your class for free.</p>
+</div>
+
+<div class='sisyphus__inline-edit--container'>
+<span class='sis__inline-edit'>[ <!-- non-admins go to feedback page -->
+<a class="sisyphus__edit-action" rel="nofollow" data-track="Sisyphus:clicked_inline_edit" data-track-properties-json="{&quot;registered&quot;: &quot;true&quot;, &quot;admin&quot;: &quot;false&quot;}" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/issues/new/">edit
+</a> ]</span>
+</div>
+<div class='sisyphus__selection-popup'>
+<!-- non-admins go to feedback page -->
+<a class="sisyphus__edit-action" rel="nofollow" data-track="Sisyphus:clicked_text_selection_edit" data-track-properties-json="{&quot;registered&quot;: &quot;true&quot;, &quot;admin&quot;: &quot;false&quot;}" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/issues/new/"><i class='icon-pencil'></i><span class='lbl'>Edit this content</span></a></div>
+
+
+</div>
+</div>
+</div>
+</div>
+<div class='content-footer clearfix'>
+<div class='container concept-content-width clearfix'>
+<div class='adjacent-concept-link__container adjacent-concept-link__prev'>
+<a class="adjacent-concept-link__button" data-push="true" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/comparing-real-and-nominal-gdp-94/the-gdp-deflator-358-12455/"><i class='icon-angle-left'></i>
+Prev Concept
+</a><div class='adjacent-concept-link__title'>The GDP Deflator</div>
+</div>
+<div class='adjacent-concept-link__container adjacent-concept-link__next'>
+<div class='adjacent-concept-link__title'>Defining and Calculating CPI</div>
+<a class="adjacent-concept-link__button" data-push="true" href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/defining-and-calculating-cpi-360-12457/">Next Concept
+<i class='icon-angle-right'></i>
+</a></div>
+</div>
+</div>
+<div class='sub-content-footer'>
+<div class='container concept-content-width clearfix'>
+<div class='content-objects-list'>
+<div class='content-objects-list__header'>
+<form class="pull-right" action="/questions/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XoH93E88HcIze35FVN0dZjXCqqe3zCxd8YWNgvXvTICmjNW/rlyOhE5UwQGLqkNATaXJfdiNV01Z7pULBgIxBg==" />
+<input type="hidden" name="question[atom_id]" id="question_atom_id" value="12456" />
+<button name="button" type="submit" class="btn"><i class="icon-plus"></i> Create Question</button>
+</form>
+
+Referenced in <b>1 quiz question</b>
+</div>
+<div class='content-objects-list__item'>
+<a class="content__meta-icon content-objects-list__item__icon" href="/questions/which-of-the-following-best-describes-a-cost-push-inflation-scenario-48437/"><i class='boundless-icon-question'></i>
+</a><div class='content-objects-list__item__body'>
+<div class='content-objects-list__item__body__title'>
+<a href="/questions/which-of-the-following-best-describes-a-cost-push-inflation-scenario-48437/">Which of the following best describes a cost-push inflation scenario?</a>
+</div>
+<div class='content-objects-list__item__body__subtitle'>
+Global wheat supplies are destroyed, and wheat is a necessary input for toaster pastries, All of these answers, The price of toaster pastries has been steadily rising for the past decade, or Due to a new, trendy diet, people are eating more toaster pastries than ever
+</div>
+<a class="content-objects-list__item__carat-cta-link" href="/questions/which-of-the-following-best-describes-a-cost-push-inflation-scenario-48437/"><i class='content-objects-list__item__carat-cta icon-angle-right'></i>
+</a></div>
+</div>
+</div>
+</div>
+<div class='container concept-content-width clearfix'>
+<div class='glossary-container'>
+<h4 class='bcp-concept--collapsible-header collapsed' data-target='#key_term_glossary' data-toggle='collapse'>
+<i class='icon-caret-down'></i>
+Key Term Reference
+</h4>
+<dl class='collapse' id='key_term_glossary'>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='keynesian'>Keynesian</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/introducing-supply-and-demand-3/market-equilibrium-48/clearing-the-market-at-equilibrium-price-and-quantity-179-12277/">Clearing the Market at Equilibrium Price and Quantity</a>, <a href="/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/other-measures-of-output-93/national-income-353-12450/">National Income</a>, and <a href="/economics/textbooks/boundless-economics-textbook/major-macroeconomic-theories-25/major-theories-in-macroeconomics-111/keynesian-theory-424-12521/">Keynesian Theory</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='keynesian-economics'>Keynesian Economics</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/political-science/textbooks/boundless-political-science-textbook/economic-policy-16/economic-policy-102/fiscal-policy-543-4837/">Fiscal Policy</a>, <a href="/business/textbooks/boundless-business-textbook/economics-and-business-2/businesses-under-mixed-economic-systems-32/mixed-economies-168-7810/">Mixed Economies</a>, and <a href="/economics/textbooks/boundless-economics-textbook/aggregate-demand-and-supply-24/introducing-aggregate-demand-and-aggregate-supply-107/keynesian-theory-412-12509/">Keynesian Theory</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='supply-curve'>Supply curve</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/principles-of-economics-1/interaction-of-individuals-firms-and-societies-41/trade-leads-to-gains-146-12244/">Trade Leads to Gains</a>, <a href="/economics/textbooks/boundless-economics-textbook/principles-of-economics-1/interaction-of-individuals-firms-and-societies-41/the-function-and-nature-of-markets-148-12246/">The Function and Nature of Markets</a>, and <a href="/economics/textbooks/boundless-economics-textbook/introducing-supply-and-demand-3/supply-47/market-supply-176-12274/">Market Supply</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='aggregate'>aggregate</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/aggregate-demand-and-supply-24/aggregate-supply-109/the-slope-of-the-short-run-aggregate-supply-curve-417-12514/">The Slope of the Short-Run Aggregate Supply Curve</a>, <a href="/psychology/textbooks/boundless-psychology-textbook/personality-16/trait-perspectives-on-personality-79/general-strengths-and-limitations-of-trait-perspectives-312-12847/">General Strengths and Limitations of Trait Perspectives</a>, and <a href="/users/147236/textbooks/living-with-art-4b25ec7a-3439-4e26-a668-150e92363136/architecture-13/modern-materials-and-architecture-57/reinforced-concrete-construction-287-13028/">Reinforced Concrete Construction</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='aggregate-demand'>aggregate demand</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/aggregate-demand-and-supply-24/the-aggregate-demand-supply-model-110/reasons-for-and-consequences-of-shift-in-aggregate-demand-422-12519/">Reasons for and Consequences of Shift in Aggregate Demand</a>, <a href="/economics/textbooks/boundless-economics-textbook/monetary-policy-28/impacts-of-federal-reserve-policies-119/the-impact-of-monetary-policy-on-aggregate-demand-prices-and-real-gdp-470-12566/">The Impact of Monetary Policy on Aggregate Demand, Prices, and Real GDP</a>, and <a href="/economics/textbooks/boundless-economics-textbook/open-economy-macroeconomics-32/equilibrium-131/effect-of-a-government-budget-deficit-on-investment-and-equilibrium-523-12619/">Effect of a Government Budget Deficit on Investment and Equilibrium</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='aggregate-supply'>aggregate supply</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/principles-of-economics-1/interaction-of-individuals-firms-and-societies-41/full-economy-interactions-151-12249/">Full Economy Interactions</a>, <a href="/economics/textbooks/boundless-economics-textbook/introducing-supply-and-demand-3/supply-47/supply-schedules-and-supply-curves-175-12273/">Supply Schedules and Supply Curves</a>, and <a href="/economics/textbooks/boundless-economics-textbook/aggregate-demand-and-supply-24/introducing-aggregate-expenditure-106/graphing-equilibrium-408-12505/">Graphing Equilibrium</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='capacity'>capacity</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/finance/textbooks/boundless-finance-textbook/forecasting-financial-statements-4/the-role-of-financial-forecasting-in-planning-48/adjusting-capacity-237-7959/">Adjusting Capacity</a>, <a href="/business/textbooks/boundless-business-textbook/operations-management-10/planning-for-operations-73/capacity-planning-347-10187/">Capacity Planning</a>, and <a href="/economics/textbooks/boundless-economics-textbook/elasticity-and-its-implications-6/price-elasticity-of-supply-56/measuring-the-price-elasticity-of-supply-216-12307/">Measuring the Price Elasticity of Supply</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='commodity'>commodity</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/accounting/textbooks/boundless-accounting-textbook/introduction-to-accounting-1/conventions-and-standards-21/current-issues-in-reporting-and-disclosure-135-3765/">Current Issues in Reporting and Disclosure</a>, <a href="/economics/textbooks/boundless-economics-textbook/the-market-system-2/introducing-the-market-system-45/production-possibility-frontier-167-12265/">Production Possibility Frontier</a>, and <a href="/economics/textbooks/boundless-economics-textbook/inputs-to-production-labor-natural-resources-and-technology-14/capital-and-natural-resource-markets-81/natural-resource-market-314-12411/">Natural Resource Market</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='cost'>cost</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/users/274854/textbooks/my-writing-book/introduction-to-the-practice-of-writing-1/the-practice-of-writing-6/explaining-the-stakes-and-the-consequences-35-8487/">Explaining the Stakes and the Consequences</a>, <a href="/economics/textbooks/boundless-economics-textbook/principles-of-economics-1/the-study-of-economics-39/is-economics-a-science-140-12238/">Is Economics a Science?</a>, and <a href="/economics/textbooks/boundless-economics-textbook/production-9/production-cost-64/economic-costs-244-12342/">Economic Costs</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='currency'>currency</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/business/textbooks/boundless-business-textbook/the-functions-of-money-and-banking-21/american-banking-125/non-bank-financial-institutions-578-8997/">Non-Bank Financial Institutions</a>, <a href="/business/textbooks/boundless-business-textbook/the-functions-of-money-and-banking-21/money-as-a-tool-123/measuring-the-money-supply-570-10240/">Measuring the Money Supply</a>, and <a href="/economics/textbooks/boundless-economics-textbook/the-monetary-system-27/creating-money-116/example-transactions-showing-how-a-bank-can-create-money-456-12553/">Example Transactions Showing How a Bank Can Create Money</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='demand'>demand</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/monopoly-11/monopoly-production-and-pricing-decisions-and-profit-outcome-71/monopoly-price-and-profit-271-12368/">Monopoly Price and Profit</a>, <a href="/economics/textbooks/boundless-economics-textbook/aggregate-demand-and-supply-24/the-aggregate-demand-supply-model-110/macroeconomic-equilibrium-421-12518/">Macroeconomic Equilibrium</a>, and <a href="/users/321200/textbooks/boundless-alternative-8th-ed/consumption-and-investment-16/investment-53/shifts-in-investment-due-to-shocks-199-13133/">Shifts in investment due to shocks</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='input'>input</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/management/textbooks/boundless-management-textbook/control-8/managing-productivity-67/defining-productivity-335-4217/">Defining Productivity</a>, <a href="/business/textbooks/boundless-business-textbook/operations-management-10/introduction-to-operations-management-69/a-study-of-process-328-7195/">A Study of Process</a>, and <a href="/economics/textbooks/boundless-economics-textbook/inputs-to-production-labor-natural-resources-and-technology-14/capital-productivity-and-technology-82/changes-in-technology-over-time-317-12414/">Changes in Technology Over Time</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='labor'>labor</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/accounting/textbooks/boundless-accounting-textbook/controlling-and-reporting-of-inventories-5/understanding-inventory-34/components-of-inventory-cost-202-1451/">Components of Inventory Cost</a>, <a href="/accounting/textbooks/boundless-accounting-textbook/detailed-review-of-the-income-statement-13/understanding-the-income-statement-84/cost-of-goods-sold-and-gross-profit-382-3576/">Cost of Goods Sold and Gross Profit</a>, and <a href="/economics/textbooks/boundless-economics-textbook/principles-of-economics-1/basic-economic-questions-42/production-inputs-and-process-153-12251/">Production Inputs and Process</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='price'>price</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/business/textbooks/boundless-business-textbook/product-and-pricing-strategies-15/pricing-methods-93/break-even-analysis-437-4581/">Break-Even Analysis</a>, <a href="/marketing/textbooks/boundless-marketing-textbook/pricing-8/introduction-to-price-57/terms-used-to-describe-price-288-4992/">Terms Used to Describe Price</a>, and <a href="/economics/textbooks/boundless-economics-textbook/the-market-system-2/introducing-the-market-system-45/defining-a-market-system-165-12263/">Defining a Market System</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='purchasing-power'>purchasing power</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/income-inequality-and-poverty-17/defining-and-measuring-inequality-mobility-and-poverty-89/defining-and-measuring-poverty-333-12430/">Defining and Measuring Poverty</a>, <a href="/economics/textbooks/boundless-economics-textbook/economic-growth-20/assessing-growth-97/growth-in-the-rest-of-the-world-366-12463/">Growth in the Rest of the World</a>, and <a href="/economics/textbooks/boundless-economics-textbook/inflation-21/defining-measuring-and-assessing-inflation-101/deflation-387-12484/">Deflation</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='shock'>shock</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/physiology/textbooks/boundless-anatomy-and-physiology-textbook/joints-8/synovial-joints-92/nerve-and-blood-supply-517-16/">Nerve and Blood Supply</a>, <a href="/physiology/textbooks/boundless-anatomy-and-physiology-textbook/the-skeletal-system-7/axial-skeleton-diseases-disorders-injury-and-clinical-cases-83/fractures-of-the-vertebral-column-482-992/">Fractures of the Vertebral Column</a>, and <a href="/physiology/textbooks/boundless-anatomy-and-physiology-textbook/the-cardiovascular-system-blood-vessels-19/circulatory-shock-187/homeostatic-responses-to-shock-931-2393/">Homeostatic Responses to Shock</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='supply'>supply</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/business/textbooks/boundless-business-textbook/economics-and-business-2/introduction-to-economic-systems-27/impacts-of-supply-and-demand-on-businesses-151-7840/">Impacts of Supply and Demand on Businesses</a>, <a href="/economics/textbooks/boundless-economics-textbook/elasticity-and-its-implications-6/price-elasticity-of-supply-56/definition-of-price-elasticity-of-supply-215-12306/">Definition of Price Elasticity of Supply</a>, and <a href="/economics/textbooks/boundless-economics-textbook/elasticity-and-its-implications-6/price-elasticity-of-supply-56/applications-of-elasticities-217-12308/">Applications of Elasticities</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='supply-shock'>supply shock</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/introduction-to-macroeconomics-18/key-topics-in-macroeconomics-91/recessions-343-12440/">Recessions</a>, <a href="/economics/textbooks/boundless-economics-textbook/inflation-and-unemployment-23/the-relationship-between-inflation-and-unemployment-105/shifting-the-phillips-curve-with-a-supply-shock-404-12501/">Shifting the Phillips Curve with a Supply Shock</a>, and <a href="/economics/textbooks/boundless-economics-textbook/aggregate-demand-and-supply-24/the-aggregate-demand-supply-model-110/reasons-for-and-consequences-of-shift-in-aggregate-supply-423-12520/">Reasons for and Consequences of Shift in Aggregate Supply</a>
+</span>
+</dd>
+</div>
+<div class='key_term_glossary_entry'>
+<dt class='target' id='unemployment'>unemployment</dt>
+<dd>
+<span class='key_term_reference_list'>
+<strong>Appears in these related concepts:</strong> <a href="/economics/textbooks/boundless-economics-textbook/unemployment-22/measuring-unemployment-103/shortcomings-of-the-measurement-392-12489/">Shortcomings of the Measurement</a>, <a href="/economics/textbooks/boundless-economics-textbook/unemployment-22/measuring-unemployment-103/typical-lengths-of-unemployment-393-12490/">Typical Lengths of Unemployment</a>, and <a href="/economics/textbooks/boundless-economics-textbook/monetary-policy-28/impacts-of-federal-reserve-policies-119/the-effect-of-expansionary-monetary-policy-471-12567/">The Effect of Expansionary Monetary Policy</a>
+</span>
+</dd>
+</div>
+</dl>
+</div>
+
+</div>
+<div class='container concept-content-width clearfix'>
+<div class='sources-container'>
+<h4 class='bcp-concept--collapsible-header collapsed' data-target='.sources' data-toggle='collapse'>
+<i class='icon-caret-down'></i>
+Sources
+</h4>
+<ul class='sources collapse'>
+<p class='bcp-sans-copy'>Boundless vets and curates high-quality, openly licensed content from around the Internet. This particular resource used the following sources:</p>
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;As AD cost push.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://en.wikipedia.org/wiki/File:As_AD_cost_push.svg">http://en.wikipedia.org/wiki/File:As_AD_cost_push.svg</a>
+<span class='attribution-name'>Wikipedia</span>
+<a href="http://www.gnu.org/copyleft/fdl.html">GNU FDL</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;Push-pull-inflation.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://en.wikipedia.org/wiki/File:Push-pull-inflation.jpg">http://en.wikipedia.org/wiki/File:Push-pull-inflation.jpg</a>
+<span class='attribution-name'>Wikipedia</span>
+<a href="http://www.gnu.org/copyleft/fdl.html">GNU FDL</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;Inflation.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://en.wikipedia.org/wiki/Inflation">http://en.wikipedia.org/wiki/Inflation</a>
+<span class='attribution-name'>Wikipedia</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;Cost-push inflation.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://en.wikipedia.org/wiki/Cost-push_inflation">http://en.wikipedia.org/wiki/Cost-push_inflation</a>
+<span class='attribution-name'>Wikipedia</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;Demand-pull inflation.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://en.wikipedia.org/wiki/Demand-pull_inflation">http://en.wikipedia.org/wiki/Demand-pull_inflation</a>
+<span class='attribution-name'>Wikipedia</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;econ101-powers-sectione - Types of Inflation.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://econ101-powers-sectione.wikispaces.com/Types+of+Inflation">http://econ101-powers-sectione.wikispaces.com/Types+of+Inflation</a>
+<span class='attribution-name'>Wikispaces</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;econ101-powers-sectionc - Types of Inflation.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://econ101-powers-sectionc.wikispaces.com/Types+of+Inflation">http://econ101-powers-sectionc.wikispaces.com/Types+of+Inflation</a>
+<span class='attribution-name'>Wikispaces</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a>.
+</div>
+
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;Boundless.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://www.boundless.com//economics/definition/cost-push-inflation">http://www.boundless.com//economics/definition/cost-push-inflation</a>
+<span class='attribution-name'>Boundless Learning</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;Boundless.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://www.boundless.com//economics/definition/demand-pull-inflation">http://www.boundless.com//economics/definition/demand-pull-inflation</a>
+<span class='attribution-name'>Boundless Learning</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;inflation.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://en.wiktionary.org/wiki/inflation">http://en.wiktionary.org/wiki/inflation</a>
+<span class='attribution-name'>Wiktionary</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;Supply shock.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://en.wikipedia.org/wiki/Supply_shock">http://en.wikipedia.org/wiki/Supply_shock</a>
+<span class='attribution-name'>Wikipedia</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+</div>
+
+<div class='attribution'>
+<div class='attribution-title'>
+<strong>&quot;Boundless.&quot;</strong>
+</div>
+<a class="attribution-link" href="http://www.boundless.com/">http://www.boundless.com/</a>
+<span class='attribution-name'>Boundless Learning</span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+</div>
+
+</ul>
+</div>
+</div>
+<div class='container concept-content-width clearfix'>
+<h4 class='bcp-concept--collapsible-header'>
+Cite This Source
+</h4>
+<div class='citation-container'>
+<div class='copy-citation-button-container' id='refme-placeholder'></div>
+<p class='bcp-sans-copy'>Source: Boundless. “Introduction to Inflation.” <em>Boundless Economics</em>. Boundless, 21 Jul. 2015. Retrieved 10 Jan. 2016 from <span class='citation__url-text'>https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/</span></p>
+</div>
+</div>
+</div>
+<div id='prompter_container'></div>
+
+
+</div>
+<footer id='footer'>
+<div class='footer__content-container'>
+<div class='footer__group'>
+<h5 class='footer__header'>
+Subjects
+</h5>
+<ul class='footer__subject-list'>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/accounting/">Accounting</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/algebra/">Algebra</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/art-history/">Art History</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/biology/">Biology</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/business/">Business</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/calculus/">Calculus</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/chemistry/">Chemistry</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/communications/">Communications</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/computer-science/">Computer Science</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/economics/">Economics</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/education/">Education</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/finance/">Finance</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/management/">Management</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/marketing/">Marketing</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/microbiology/">Microbiology</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/music/">Music</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/philosophy/">Philosophy</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/physics/">Physics</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/physiology/">Physiology</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/political-science/">Political Science</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/psychology/">Psychology</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/sociology/">Sociology</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/statistics/">Statistics</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/u-s-history/">U.S. History</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/world-history/">World History</a>
+</li>
+<li class='footer__subject-list-item'>
+<a data-push="true" target="blank" href="https://www.boundless.com/writing/">Writing</a>
+</li>
+</ul>
+</div>
+<div class='footer__group'>
+<div class='footer__subgroup'>
+<h5 class='footer__header'>
+Products
+</h5>
+<ul class='footer__products-list'>
+<li class='footer__products-list-item'><a target="blank" href="https://www.boundless.com/students/">For Students</a></li>
+<li class='footer__products-list-item'><a target="blank" href="https://www.boundless.com/teaching/">For Educators</a></li>
+<li class='footer__products-list-item'><a target="blank" href="https://www.boundless.com/institutions/">For Institutions</a></li>
+<li class='footer__products-list-item'><a target="blank" href="https://marketplace.boundless.com/">Marketplace</a></li>
+<li class='footer__products-list-item'><a target="blank" href="https://www.boundless.com/subjects/quizzes/">Quizzes</a></li>
+<li class='footer__products-list-item'><a target="blank" href="https://www.boundless.com/subjects/powerpoint-templates/">PowerPoints</a></li>
+<li class='footer__products-list-item'><a target="blank" href="https://www.boundless.com/canvas/">Canvas Integration</a></li>
+</ul>
+</div>
+<div class='footer__subgroup'>
+<div class='company-subgroup'>
+<h5 class='footer__header'>
+Boundless
+</h5>
+<ul class='footer__company-links-list'>
+<li class='footer__company-links-list-item'><a target="blank" href="https://www.boundless.com/careers/">Careers</a></li>
+<li class='footer__company-links-list-item'><a target="blank" href="https://www.boundless.com/about-us/">About Us</a></li>
+<li class='footer__company-links-list-item'><a target="blank" href="https://www.boundless.com/partners/">Partners</a></li>
+<li class='footer__company-links-list-item'><a target="blank" href="https://www.boundless.com/press/">Press</a></li>
+<li class='footer__company-links-list-item'><a target="blank" href="https://www.boundless.com/community/">Community</a></li>
+</ul>
+</div>
+</div>
+<div class='footer__subgroup'>
+<div class='follow-us-subgroup'>
+<h5 class='footer__header'>
+Follow Us
+</h5>
+<ul class='footer__follow-us-links-list'>
+<li class='footer__follow-us-links-list-item'><a target="blank" title="Boundless on Facebook" href="https://www.facebook.com/GoBoundless">Facebook</a></li>
+<li class='footer__follow-us-links-list-item'><a target="blank" title="Boundless on Twitter" href="http://twitter.com/GoBoundless">Twitter</a></li>
+<li class='footer__follow-us-links-list-item'><a target="blank" href="http://blog.boundless.com/">Blog</a></li>
+</ul>
+</div>
+</div>
+<div class='footer__subgroup'>
+<div class='questions-subgroup'>
+<h5 class='footer__header'>
+Questions?
+</h5>
+<ul class='footer__questions-links-list'>
+<li class='footer__questions-links-list-item'><a target="blank" href="http://support.boundless.com">Visit Support</a></li>
+<li class='footer__questions-links-list-item'><a target="blank" href="mailto:support@boundless.com">Email Us</a></li>
+</ul>
+</div>
+</div>
+<div class='footer__subgroup'>
+<h5 class='footer__header'>
+Legal
+</h5>
+<ul class='footer__legal-links-list'>
+<li class='footer__legal-links-list-item'><a target="blank" href="https://www.boundless.com/terms/">Terms of Service</a></li>
+<li class='footer__legal-links-list-item'><a target="blank" href="https://www.boundless.com/privacy/">Privacy</a></li>
+</ul>
+</div>
+</div>
+<div class='footer__footer'>
+<p>Except where noted, content and user contributions on this site are licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> with attribution required.</p>
+</div>
+</div>
+</footer>
+
+<div class='reader-frame'>
+<div class='reader-frame__inner'>
+<iframe class='reader-frame__iframe' name='reader-frame__iframe'></iframe>
+</div>
+</div>
+</div>
+
+<script>
+  var _event_queue = _event_queue || [];
+  var browser_supported = true;
+</script>
+<script src="//js.pusher.com/2.2/pusher.min.js"></script>
+<script>
+  window.PageData = (window.PageData || {});
+</script>
+<script>
+  window.landing_page = "concept_page";
+</script>
+<script>
+//<![CDATA[
+window.PageData.subjects = [{"id":28,"name":"Accounting","chegg":{"id":682,"name":"Accounting","url_name":"Accounting","parent_id":718}},{"id":30,"name":"Algebra","chegg":{"id":1,"name":"Algebra","url_name":"Algebra","parent_id":601}},{"id":32,"name":"Art History","chegg":{"id":53,"name":"Art History","url_name":"Art-History","parent_id":721}},{"id":54,"name":"Biology","chegg":{"id":599,"name":"Biology","url_name":"Biology","parent_id":606}},{"id":36,"name":"Business","chegg":{"id":1356,"name":"Business","url_name":"Business","parent_id":2820}},{"id":37,"name":"Calculus","chegg":{"id":604,"name":"Calculus","url_name":"Calculus","parent_id":601}},{"id":38,"name":"Chemistry","chegg":{"id":602,"name":"Chemistry","url_name":"Chemistry","parent_id":606}},{"id":39,"name":"Communications","chegg":{"id":1321,"name":"Communication","url_name":"Communication","parent_id":721}},{"id":71,"name":"Computer Science","chegg":{"id":30,"name":"Computer Science","url_name":"Computer-Science","parent_id":686}},{"id":56,"name":"Economics","chegg":{"id":603,"name":"Economics","url_name":"Economics","parent_id":718}},{"id":61,"name":"Education","chegg":{"id":1405,"name":"Education","url_name":"Education","parent_id":721}},{"id":41,"name":"Finance","chegg":{"id":701,"name":"Finance","url_name":"Finance","parent_id":718}},{"id":43,"name":"Management","chegg":{"id":1421,"name":"Management","url_name":"Management","parent_id":1356}},{"id":44,"name":"Marketing","chegg":{"id":1343,"name":"Marketing","url_name":"Marketing","parent_id":718}},{"id":45,"name":"Microbiology","chegg":{"id":630,"name":"Microbiology","url_name":"Microbiology","parent_id":599}},{"id":64,"name":"Music","chegg":{"id":542,"name":"Music Theory","url_name":"Music-Theory","parent_id":721}},{"id":72,"name":"Philosophy","chegg":{"id":642,"name":"Philosophy","url_name":"Philosophy","parent_id":721}},{"id":46,"name":"Physics","chegg":{"id":600,"name":"Physics","url_name":"Physics","parent_id":606}},{"id":47,"name":"Physiology","chegg":{"id":42,"name":"Physiology","url_name":"Physiology","parent_id":599}},{"id":48,"name":"Political Science","chegg":{"id":691,"name":"Political Science","url_name":"Political-Science","parent_id":718}},{"id":55,"name":"Psychology","chegg":{"id":40,"name":"Psychology","url_name":"Psychology","parent_id":718}},{"id":50,"name":"Sociology","chegg":{"id":660,"name":"Sociology","url_name":"Sociology","parent_id":718}},{"id":51,"name":"Statistics","chegg":{"id":605,"name":"Statistics","url_name":"Statistics","parent_id":601}},{"id":42,"name":"U.S. History","chegg":{"id":47,"name":"US History","url_name":"US-History","parent_id":631}},{"id":70,"name":"World History","chegg":{"id":48,"name":"World History","url_name":"World-History","parent_id":631}},{"id":52,"name":"Writing","chegg":{"id":43,"name":"Writing","url_name":"Writing","parent_id":721}}];
+
+//]]>
+</script>
+
+<script>
+  window.Boundless = window.Boundless || {};
+  
+  (function (Boundless) {
+  
+    document.domain = 'boundless.com';
+  
+    constants = {
+      API: "https://www.boundless.com:443/api/public",
+      APP_URL: "https://www.boundless.com:443",
+      BOOK_PRICE: 9.99,
+      COURSE_PRICE: 29.99,
+      COOKIE_DOMAIN: ".boundless.com",
+      DEBUG: (window.location.href.indexOf('debug') != -1) || false,
+      ENV: "production",
+      FIGURES_CDN: "//figures.boundless.com",
+      FIGURES_URL: "http://figures.boundless.com",
+      HOST_DOMAIN: "www.boundless.com:443",
+      PROTOCOL: "https",
+      WWW_HOST: "www.boundless.com",
+      MARKETPLACE_HOST: "marketplace.boundless.com",
+  
+      is_full_story_enabled: function () {
+        return true;
+      },
+  
+      auth_token_param: "authentication_token",
+      pusher_key: "e73010c1bf8eac300729"
+    };
+  
+    for (var key in constants) {
+      if (constants.hasOwnProperty(key)) {
+        Boundless[key] = constants[key];
+      }
+    }
+  
+    Boundless.getServerConstants = function () {
+      if (_ !== undefined && _.clone !== undefined) {
+        return _.clone(constants);
+      } else {
+        config.warn('This method uses Underscore to clone the constants.');
+      }
+    }
+  
+    Boundless.getConstants = function () {
+      var re = /^[A-Z_]+$/,
+          constants = {};
+  
+      for (var key in Boundless) {
+        if (key.match(re) && Boundless.hasOwnProperty(key)) {
+          constants[key] = Boundless[key];
+        }
+      }
+  
+      return constants;
+    };
+  
+  })(window.Boundless);
+</script>
+
+<script src="https://assets.boundless.com/assets/shared-f72840b5961353d728d3eddb38556697.js"></script>
+<script src="https://assets.boundless.com/assets/global/core-1d4c65894b75768eb9a2008e24a3b414.js"></script>
+<script src="https://js.stripe.com/v2/"></script>
+<script>
+  var PageData = PageData || {}
+  PageData['chegg_tutors'] = [{"sticky_id": "71DO0", "last_name": "H", "major": "Economics", "is_staff": false, "negative_reviews": 1, "image_thumb_xlarge": "https://d33uy43563vk3t.cloudfront.net/6c3074dc95f285fdd66825b943ed54a6_20140822160856928287_thumb_xlarge.png", "id": 37251, "image_thumb_small": "https://d33uy43563vk3t.cloudfront.net/6c3074dc95f285fdd66825b943ed54a6_20140822160856928287_thumb_small.png", "available_now": false, "school": "University of Washington", "image_thumb_large": "https://d33uy43563vk3t.cloudfront.net/6c3074dc95f285fdd66825b943ed54a6_20140822160856928287_thumb_large.png", "user_id": 165314, "chat_availability": 1, "tutor_profile_id": 37251, "uri": "https://instaedu.com/tutors/online-tutors/Nick-H-287470/", "image_thumb_medium": "https://d33uy43563vk3t.cloudfront.net/6c3074dc95f285fdd66825b943ed54a6_20140822160856928287_thumb_medium.png", "is_superuser": false, "role": 2, "first_name": "Nick", "positive_reviews": 35}, {"sticky_id": "CBAZ2", "last_name": "K", "major": "Applied Economics and Management", "is_staff": false, "negative_reviews": 0, "image_thumb_xlarge": "https://d33uy43563vk3t.cloudfront.net/d178d4aed047b3d88c3a882c1b55f269_20160102231942541412_thumb_xlarge.png", "id": 110433, "image_thumb_small": "https://d33uy43563vk3t.cloudfront.net/d178d4aed047b3d88c3a882c1b55f269_20160102231942541412_thumb_small.png", "available_now": false, "school": "Cornell University", "image_thumb_large": "https://d33uy43563vk3t.cloudfront.net/d178d4aed047b3d88c3a882c1b55f269_20160102231942541412_thumb_large.png", "user_id": 1161213, "chat_availability": 3, "tutor_profile_id": 110433, "uri": "https://instaedu.com/tutors/online-tutors/Julia-K-2214980/", "image_thumb_medium": "https://d33uy43563vk3t.cloudfront.net/d178d4aed047b3d88c3a882c1b55f269_20160102231942541412_thumb_medium.png", "is_superuser": false, "role": 2, "first_name": "Julia", "positive_reviews": 8}, {"sticky_id": "RLYX6", "last_name": "S", "major": "PhD Economics", "is_staff": false, "negative_reviews": 1, "image_thumb_xlarge": "https://d33uy43563vk3t.cloudfront.net/402f939f1834a69eeea6907bc45241fc_20150904220247371405_thumb_xlarge.png", "id": 38683, "image_thumb_small": "https://d33uy43563vk3t.cloudfront.net/402f939f1834a69eeea6907bc45241fc_20150904220247371405_thumb_small.png", "available_now": false, "school": "Vanderbilt University", "image_thumb_large": "https://d33uy43563vk3t.cloudfront.net/402f939f1834a69eeea6907bc45241fc_20150904220247371405_thumb_large.png", "user_id": 177677, "chat_availability": 2, "tutor_profile_id": 38683, "uri": "https://instaedu.com/tutors/online-tutors/Zeeshan-S-251945/", "image_thumb_medium": "https://d33uy43563vk3t.cloudfront.net/402f939f1834a69eeea6907bc45241fc_20150904220247371405_thumb_medium.png", "is_superuser": false, "role": 2, "first_name": "Zeeshan", "positive_reviews": 272}]
+  PageData['concept_data'] = {"atom_id":12456,"chapter_id":19,"chapter_title":"Measuring Output and Income","section_id":95,"section_title":"Cost of Living","section_index":3,"subject_tag_id":56,"subject_tag":"Economics","section_concepts":[{"atom_id":12456,"concept_title":"Introduction to Inflation"},{"atom_id":12457,"concept_title":"Defining and Calculating CPI"}]};
+</script>
+<script>
+  window.direct_traffic = 1;
+</script>
+<script>
+  Boundless.PageCallbacks.push(function() {
+  
+    ViewHelpers.typeset_equations('.bcp-content');
+  
+    window.flagger_app = new Boundless.Flagger.App();
+  
+    var sub_controller = null, title = null, completion_cookie = null;
+  
+    Boundless.Sneak = {
+      reading_url: 'https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/',
+      quiz_url: 'https://www.boundless.com/quizzes/cost-of-living-quiz-93094/'
+    };
+  
+  
+    if (!session.current_user) {
+      if (CookieMonster.get('user_type_administrator')) {
+        window.prompter = new Boundless.PrompterController({
+          el: $('#prompter_container'),
+          title: 'Boundless for Institutions',
+          sub_view: 'learn_more_institutions',
+          completion_cookie: 'how_can_we_help',
+          delay: 5000
+        });
+      } else if (CookieMonster.get('user_type_educator')) {
+        window.prompter = new Boundless.PrompterController({
+          el: $('#prompter_container'),
+          title: 'Boundless Teaching',
+          sub_view: 'learn_more_teaching',
+          completion_cookie: 'how_can_we_help',
+          delay: 5000
+        });
+      } else if(CookieMonster.get('user_type_student')){
+        window.prompter = new Boundless.PrompterController({
+          el: $('#prompter_container'),
+          title: 'Find an online tutor now',
+          sub_controller: Boundless.TutoringSurveyController,
+          subject_name: "Economics",
+          completion_cookie: 'chegg_tutoring_survey',
+          delay: 000
+        });
+      } else if (!CookieMonster.has_user_type_cookie()) {
+        window.prompter = new Boundless.PrompterController({
+          el: $('#prompter_container'),
+          title: 'Welcome to Boundless, see how we can help!',
+          sub_controller: Boundless.HowCanWeHelpController,
+          atom_id: 12456,
+          subject_name: "Economics",
+          completion_cookie: 'how_can_we_help',
+          delay: 5000
+        });
+      }
+    }
+  
+    RefME.createButton({
+      element: '#refme-placeholder',
+      config: {style: 'apa-version-7'},
+      data: [{
+        id: "12456-v100765",
+        title: "Boundless Economics",
+        'container-title': "Introduction to Inflation",
+        type: 'book',
+        URL: "https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/",
+        author: [{
+          given: 'Boundless'
+        }],
+        issued: {
+          year: "2015",
+          month: "7",
+          day: "21"
+        }
+      }]
+    })
+  });
+</script>
+<!-- Sisyphus -->
+<!-- Inline edit links are injected after each minor heading. -->
+<script>
+  Boundless.PageCallbacks.push(function() {
+    $('.bcp-concept--minor-heading').each(function(i, node) {
+      $(node).append($('.sisyphus__inline-edit--container .sis__inline-edit').clone())
+    })
+  });
+</script>
+<script>
+  Boundless.PageCallbacks.push(function() {
+    $("body").bind('copy', function (e) {
+      if (typeof window.getSelection == "undefined") return; //IE8 or earlier...
+
+      var body_element = document.getElementsByTagName('body')[0];
+      var selection = window.getSelection();
+      var range = selection.getRangeAt(0);
+
+      //if the selection is short let's not annoy our users
+      if (("" + selection).length < 30) return;
+
+      //create a div outside of the visible area
+      var newdiv = document.createElement('div');
+      newdiv.style.position = 'absolute';
+      newdiv.style.left = '-99999px';
+      body_element.appendChild(newdiv);
+      newdiv.appendChild(range.cloneContents());
+
+      //we need a <pre> tag workaround
+      //otherwise the text inside "pre" loses all the line breaks!
+      if (range.commonAncestorContainer.nodeName == "PRE") {
+        newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+      }
+
+      if (!session.current_user || (session.current_user && !session.current_user.is_admin())){
+        newdiv.innerHTML += "<br /><br />Source: Boundless. “Introduction to Inflation.” <em>Boundless Economics</em>. Boundless, 21 Jul. 2015. Retrieved 10 Jan. 2016 from <span class='citation__url-text'>https://www.boundless.com/economics/textbooks/boundless-economics-textbook/measuring-output-and-income-19/cost-of-living-95/introduction-to-inflation-359-12456/</span>";
+      }
+
+      selection.selectAllChildren(newdiv);
+      window.setTimeout(function () {
+        body_element.removeChild(newdiv);
+
+        // Restore the original selection
+        range = rangy.createRange();
+        range.setStart(range.startContainer, range.startOffset);
+        range.setEnd(range.endContainer, range.endOffset);
+        selection = rangy.getSelection();
+        selection.setSingleRange(range);
+      }, 100);
+    });
+  });
+</script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/10344682/Concept_Inline_Leaderboard', [728, 90], 'div-gpt-ad-1423749603292-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1423749603292-0'); });
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/10344682/Concept_Inline', [336, 280], 'div-gpt-ad-1425409301314-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1425409301314-0'); });
+</script>
+
+<script>
+  Boundless.PageCallbacks.push(function() {
+  
+    $(".content__breadcrumbs").off('click').on('click', function(evt){
+      if( $body.width() < 500 ){
+        evt.preventDefault();
+        evt.stopPropagation();
+        $('.content__breadcrumbs-dropdown').slideToggle(150);
+      }
+    });
+  });
+</script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/10344682/Concept_Sidebar_160x600', [160, 600], 'div-gpt-ad-1414682687232-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1414682687232-0'); });
+</script>
+
+<script>
+  // Handle the action info dropdown simple logic
+  $('.content-action-info__toggle').click(function(e) {
+    e.stopPropagation();
+    $('.content-action-info__panel__cont .callout-thingy').css({
+      right: $('.content-action-info__toggle').offsetParent().width() - 38 }
+    );
+  
+    $('.content-action-info__panel__cont').toggle();
+  });
+  
+  $('.content-action-info__panel__header').click(function(e) {
+    $('.content-action-info__panel__cont').hide();
+  });
+  
+  $(document).click(function(e) {
+    if ($('.content-action-info__panel__cont').is(":visible")) {
+      if (!$(e.currentTarget).closest('.content-action-info__panel__cont').length) {
+        $('.content-action-info__panel__cont').hide();
+      }
+    }
+  
+    if ( $(e.target).hasClass('content__top__alignment-title__meta__toggle') ){
+      $('.content__top__alignment-title__meta').removeClass('content__top__alignment-title__meta--hidden').addClass('content__top__alignment-title__meta--shown')
+    }
+  });
+  //////
+  
+  Boundless.PageCallbacks.push(function() {
+    watcher = new Boundless.Watcher.App({"resource_type":"Atom","resource_id":12456,"watch_count":0,"notification_subscription_id":null,"resource_name":"concept"});
+    favoriter = new Boundless.Favoriter.App({"resource_type":"Atom","resource_id":12456,"favorite_count":0,"favorite_id":null});
+  })
+</script>
+<script>
+  Boundless.PageCallbacks.push(function() {
+    new Boundless.Header({
+      el: $('.navbar')
+    })
+  })
+</script>
+<script src="https://assets.boundless.com/assets/platform/application-5719b35a3a86af9f827f6b41244a18d5.js"></script>
+<script src="https://assets.boundless.com/assets/prompter/application-0ee18faba0d2e6ce180858afca554025.js"></script>
+
+<script>
+  // Don't let Google Analytics count this as a bounce if visit is >60s or they click a link
+  $(function() {
+    $('a').one('click', function(){
+      Boundless.Events.General.track('no_bounce');
+    });
+    setTimeout(function(){
+      Boundless.Events.General.track('no_bounce');
+    }, 60000);
+  });
+</script>
+<noscript>
+<div style='display:inline;'>
+<img alt='' height='1' src='//googleads.g.doubleclick.net/pagead/viewthroughconversion/1004080308/?value=0&amp;label=SnMoCKyoxgQQtJnk3gM&amp;guid=ON&amp;script=0' style='border-style:none;' width='1'>
+</div>
+</noscript>
+<img alt='' height='1' id='adwords_conversion_img' src='' style='visibility: hidden; position: absolute; bottom: 0;' width='1'>
+<!-- MathJax -->
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/SVG"],
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    Macros: {
+      euro: "\\unicode{x20AC}"
+    }
+  },
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+  },
+  messageStyle: 'none',
+  skipStartupTypeset: true,
+  showMathMenu: false,
+  "SVG": {
+    scale: 100,
+    minScaleAdjust: 50,
+    blacker: 10,
+    EqnChunk: 50,
+    EqnChunkFactor: 1.5,
+    EqnChunkDelay: 100
+  }
+});
+</script>
+<script src="//mathjax.boundless.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- / Retargeting if initial purchase was just made -->
+<script type="text/javascript">
+  var google_conversion_id = 1004080308;
+  var google_conversion_label = "pTmACO_Zz14QtJnk3gM";
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+</script>
+<div style="display: none;">
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+</div>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1004080308/?value=1.00&amp;currency_code=USD&amp;label=pTmACO_Zz14QtJnk3gM&amp;guid=ON&amp;script=0"/>
+  </div>
+</noscript>
+
+<!-- OwnerIQ -->
+<script>
+  var _oiqq = _oiqq || [];
+  _oiqq.push(['oiq_doTag']);
+  
+  (function() {
+    var oiq = document.createElement('script'); oiq.type = 'text/javascript'; oiq.async = true;
+    oiq.src = document.location.protocol + '//px.owneriq.net/stas/s/bound.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oiq, s);
+  })();
+</script>
+</body>
+<!-- /.....................................................,,....,,............................ -->
+<!-- /.`7MM"""Yp,........................................`7MM..`7MM............................ -->
+<!-- /...MM....Yb..........................................MM....MM............................ -->
+<!-- /...MM....dP...,pW"Wq..`7MM..`7MM..`7MMpMMMb.....,M""bMM....MM....gP"Ya...,pP"Ybd..,pP"Ybd -->
+<!-- /...MM"""bg...6W'...`Wb..MM....MM....MM....MM..,AP....MM....MM..,M'...Yb..8I...`"..8I...`" -->
+<!-- /...MM....`Y..8M.....M8..MM....MM....MM....MM..8MI....MM....MM..8M""""""..`YMMMa...`YMMMa. -->
+<!-- /...MM....,9..YA....,A9..MM....MM....MM....MM..`Mb....MM....MM..YM.....,..L....I8..L....I8 -->
+<!-- /..JMMmmmd9....`Ybmd9'...`Mbod"YML..JMML..JMML..`Wbmd"MML..JMML..`Mbmmd'..M9mmmP'..M9mmmP' -->
+<!-- / -->
+<!-- /  http://boundless.com/careers -->
+</html>
+
+
