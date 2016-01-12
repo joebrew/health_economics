@@ -2,7 +2,7 @@
 title: "CEWG notes"
 author: "Joe Brew"
 date: "January 12, 2016"
-output: html_document
+output: pdf_document
 ---
 
 I would like to start off by aplauding the WHO - and the "Consultative Expert Working Group on Research and Development" - for having impressed me: never before have I seen so many bad ideas in so few pages.
