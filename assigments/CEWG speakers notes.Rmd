@@ -1,0 +1,43 @@
+---
+title: "CEWG notes"
+author: "Joe Brew"
+date: "January 12, 2016"
+output: html_document
+---
+
+I would like to start off by aplauding the WHO - and the "Consultative Expert Working Group on Research and Development" - for having impressed me: never before have I seen so many bad ideas in so few pages.
+
+This document is bad.  And even the authors agree with me!
+
+It's amazing to me that anyone pays any attention to this document at all, especially given that in the first few pages the authors themselves seem to acknowledge that it's worthless.  They admit that the process by whic they arrived to their conclusions was "not scientific", but rather a "reasonably systematic manner to a collective judgement... informed by our own diverse experiences of what is likely to work better in practice and what is likely to work less well or not at all." (53) 
+
+It's amazing, that without science, this group of geniuses is able to know "what is likely to work better in practice."
+
+# The specifics  
+
+
+## Burden-sharing of costs  
+- Among the "principles to be enshrined" in the framework is "a fair arrangement for burden-sharing... of costs". What this essentially means is that countries and institutions are expected to have identical value systems for what research should be prioritized.  This is an outdated and colonial perspective, which clumps all developing world nations into one category.  Can we really expect that Cambodia will have the same interest and priorities as Nigeria?  If not, why should we expect for Cambodia to fund Nigeria's research interests?  
+
+## Delinking the prices of medicines from the costs of R&D  
+- This is the classic case of "wishful" thinking, in which the experts advocate for what they "wish" would work, rather than what really "does" work. Medicine is not a special sphere that works outside of the market forces.  It works just like other goods and services.  Delinking essentially means disincentivizing.  
+
+## Removing data exclusivity  
+- Let's not confuse ourselves.  Data is property, and without strong property rights, economies (be they of items or, in this case, of ideas) fail.  The authors claim that removing data exclusivity would "not adversely affect inovation incentives" but such an extreme claim should require extreme evidence - of which they gave none.
+
+## Rejection of market-oriented principles  
+- The authors reject ideas pertaining to orphaned drug schemes, prize incentives, tax incentives and transferable intellectual property rights.  Again, wishful thinking.  
+
+## Opposition to reproduced research  
+- The authors favor "open publishing approaches" so as to "reduce duplication in research".  This, at a time when the lack of reproducibility in science is causing a crisis.  Medicine and science needs _more_ duplication, not less!  
+
+## Avoiding the big issues  
+- The authors rule out "regulatory harmonization" because of the "lack of capacity in many regulatory authorities in developing countries".  It's amazing that they are able to notice this huge problem (the lack of capacity) but they make no effort to address that, thereby further enabling the problem.  
+
+# Generally  
+
+- Even if all the ideas in this document were good (which they weren't), the approach is still misguided.  This is a top-down, heavy-handed approach at "directing" (ie, "controling") something which is better left uncontrolled.  
+
+- Counterintuitive as it may seem, science thrives in chaos.  The marketplace of ideas is just that - a marketplace.  It needs freedom and flexibility in order for the best ideas to thrive organically.  Science should be bottom-up, not top-down. Doctors and epidemiologists working _on the ground_ should be innovating based on their own experience, rather than following the hunches of bureaucrats in Geneva.  
+
+- Ultimately, the authors are looking for "a solution to the problem of ... alack of global coordination of pharmaceutical R&D" (53).  But that lack of coordination isn't a weakness or a problem to be solved, it's a strength to be embraced.  Innovation thrives in chaos, not in coordination.  
