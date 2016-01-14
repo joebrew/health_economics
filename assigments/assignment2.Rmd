@@ -286,7 +286,7 @@ If we were to take the quantity of equilibrium of nets (19) and reduce productio
 
 # Details  
 
-Full code for the production of this report is available at
+Full code for the production of this report is available [online](https://github.com/joebrew/health_economics/blob/master/assigments/assignment2.Rmd).
 
 # Appendix  
 
