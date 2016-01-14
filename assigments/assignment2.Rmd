@@ -1,0 +1,300 @@
+---
+title: "Health Economics - Assignment 2"
+author: "Joe Brew"
+output:
+  pdf_document:
+    includes:
+      in_header: style.sty
+tables: yes
+latex_engine: xelatex
+highlight: zenburn
+toc: yes
+fig_width: 4
+fig_height: 2.6
+header-includes:
+     - \usepackage{longtable}
+---
+
+
+
+```{r, echo=FALSE, comment=NA, message=FALSE, warning=FALSE} 
+#libraries
+library(ggplot2)
+library(grid)
+library(dplyr)
+library(knitr)
+library(ggthemes)
+library(RColorBrewer)
+library(Hmisc)
+library(knitr)
+opts_chunk$set(comment = NA, message = FALSE, echo = FALSE, results = 'hide', fig.height = 2, warning = FALSE, fig.width = 4, fig.align='center')
+```
+
+```{r}
+suppressWarnings(library(xtable))
+options(xtable.comment = FALSE)
+```
+
+
+
+\begin{changemargin}{-1.5cm}{-1.5cm} 
+  \begin{tikzpicture}
+    \node [copy shadow={draw=almostblack,fill=almostblack,opacity=0.5,shadow xshift=1ex,
+           shadow yshift=-1ex},fill=grey ,draw=darkgrey,thick]
+            {\begin{minipage}{1.15\textwidth}
+            \vspace{2mm}
+            \textbf{Question 1:} \\
+Assuming that the efficacy of indoor residual spraying (IRS) lasts maximum 9 months after the day of fumigation, make a numerical example and explain the total and marginal utility of receiving the intervention every year.
+            \vspace{2mm}
+            \end{minipage}};
+  \end{tikzpicture}
+\end{changemargin}
+
+In order to make a numerical representation of the total and marginal utility related to IRS, we'll need to make multiple assumptions:  
+
+\textbf{Assumption 1: }That spraying's effects last a maximum of 9 months, and that the average population-level "utility" for the effects of spraying (displayed below) remains constant and flat during the period of effectivity.
+
+```{r}
+months <- 9
+extra <- 3
+grps <- c('Lower 95%', 'Average', 'Upper 95%')
+temp <- data.frame(indicator = rep(grps, each = months+extra),
+                   utility = c(c(seq(4, 4, length = months), rep(0, extra)),
+                               c(seq(6, 6, length = months), rep(0, extra)),
+                               c(seq(10, 10, length = months)), rep(0, extra)),
+                   month = rep(seq(1, months + extra, 1), 3))
+temp$indicator <- factor(temp$indicator, levels = grps)
+cols <- c('grey', 'red', 'grey')
+ggplot(data = temp,
+       aes(x = month,
+           y = utility,
+           group = indicator,
+           color = indicator)) +
+  geom_line() +
+  xlab('Month') +
+  ylab('Utility') +
+  scale_color_manual(values = cols,
+                     name = 'Group') +
+  theme_bw()
+```
+
+\textbf{Assumption 2: }That there is no additive effect to utility - not to effect longevity - from multiple, concurrent sprayings. By the same token, we assume (perhaps unrealistically) that there is no negative effect from multiple sprayings.
+
+```{r}
+temp <- data.frame(sprayings = 1:10,
+                   utility = rep(6, 10))
+ggplot(data = temp,
+       aes(x = sprayings,
+           y = utility)) +
+  geom_point(color = 'red') +
+  geom_line(color = 'red') +
+  xlab('Number of concurrent sprayings') +
+  ylab('Utility') +
+  theme_bw()
+```
+
+\textbf{Assumption 3: }That the only potential gain in utility from multiple sprayings would be a function of time - that is, a non-concurrent overlapping spraying could extend the longevity of IRS' effect. The below chart, in which grey bars represent spraying and the red line represents utility, illustrates this. Note that the sequential sprayings at month 5 and 7 have no effect on utility, other than to extend the high utility out to 9 months after the latter (ie, month 16).
+
+```{r}
+temp <- data.frame(month = 1:20,
+                   spray = c(rep(0, 4),
+                             6,
+                             0,
+                             6,
+                             rep(0, 10),
+                             6,
+                             rep(0, 2)),
+                   utility = c(rep(0, 4),
+                               rep(6, 11),
+                               0,
+                               rep(6, 4)))
+ggplot(data = temp) +
+  geom_bar(stat = 'identity', 
+           aes(x = month, y = spray),
+           alpha = 0.2) +
+  geom_line(aes(x = month, y = utility), color = 'red') +
+  geom_point(aes(x = month, y = utility), color = 'red') +
+  xlab('Month') +
+  ylab('Utility') +
+  theme_bw()
+```
+
+Having made these assumptions, we can construct the table.  In the below case, we assume that IRS spraying is annual, and at the same time every year.  We calculate house-specific "Marginal utility" and assume that the beneficiaries (ie, household numbers) remain constant in quanitity and character.
+
+```{r, results='asis'}
+column_names <- c('y', 'qi', 'mu', 'tu')
+column_names_formal <- c('Year', 'Quantity IRS', 'Marginal utility', 'Total utility')
+
+temp <- data.frame(y = 1:4,
+                   qi = rep(1,4),
+                   mi = rep(6,4))
+temp$ti <- cumsum(temp$mi)
+names(temp) <- column_names_formal
+print(kable(temp))
+```
+
+In reality, given the long time frame for the above table, it's likely that the number of beneficiaries (ie, household members) would be variable in both quantity and character, thereby effect marginal utility.  Here's a variation in which we assume, for example, that a pregnancy occurs in year 2, thereby increasing the marginal utility gained from IRS during year 2 and the subsequent years.
+
+```{r, results = 'asis'}
+temp <- data.frame(y = 1:4,
+                   qi = rep(1,4),
+                   mi = c(6,10, 10, 10))
+temp$ti <- cumsum(temp$mi)
+names(temp) <- column_names_formal
+print(kable(temp))
+```
+
+
+\begin{changemargin}{-1.5cm}{-1.5cm} 
+  \begin{tikzpicture}
+    \node [copy shadow={draw=almostblack,fill=almostblack,opacity=0.5,shadow xshift=1ex,
+           shadow yshift=-1ex},fill=grey ,draw=darkgrey,thick]
+            {\begin{minipage}{1.15\textwidth}
+            \vspace{2mm}
+            \textbf{Question 2:} \\
+Depict the production possibility frontier using the Excel file attached. Name q1 and q2 and substitute the zeros of the two columns A and B (from row 2 to row 14) to automatically draw a graph representing a PPF. In columns C and D (to row 2 to row 14) substitute the zeros in order to draw another PPF that represents a technological improvement in comparison with the curve depicted from columns A and B. Then, briefly explain the graphs depicted. 
+            \vspace{2mm}
+            \end{minipage}};
+  \end{tikzpicture}
+\end{changemargin}
+
+For the purposes of depicting a production possibility frontier, I've chosen to use the classic Guns and better example.  Below is a fictitious (and abbreviated) example:
+
+
+```{r, results = 'asis'}
+Nets <- seq(1, 1000, length = 100)^(1/2)
+Guns = seq(1000, 1, length = 100)^(1/2)
+temp <- data.frame(Nets = Nets,
+                   Guns = Guns)
+for(j in 1:ncol(temp)){
+  temp[,j] <- round(temp[,j], digits = 1)
+  names(temp)[j] <- capitalize(names(temp)[j])
+}
+temp_small <- temp[seq(1, 100, 10),]
+kable(temp_small)
+```
+
+Below is a visualization of the above table.
+
+```{r}
+
+ggplot(data = temp,
+       aes(x = Nets, 
+           y = Guns)) +
+  geom_point(alpha = 0.6, color = 'blue') +
+  geom_line(alpha = 0.2) +
+  xlab('Nets') +
+  ylab('Guns') +
+  theme_bw()
+
+```
+
+Technological innovation could could change the cost of production of either Guns or Nets.  For example, if a mechanical Nets-churner were to double the productivity of Nets-makers, the curve would change dramatically.
+
+```{r}
+temp$old_situation <- temp$Nets
+temp$new_situation <- temp$old_situation * 2
+temp$Nets <- NULL
+library(tidyr)
+temp <- gather(temp, situation, Nets, old_situation:new_situation)
+temp$situation <- gsub('_situation', '', temp$situation)
+ggplot(data = temp,
+       aes(x = Nets,
+           y = Guns,
+           color = situation)) +
+  geom_point(alpha = 0.6) +
+  geom_line(alpha = 0.6) +
+  scale_colour_manual(name = 'Situation',
+                      values = c('red', 'blue')) +
+  theme_bw()
+```
+
+Note that in the above chart that the curve has not simply shifted uniformly to the right.  At X=0 (ie, no Nets), productivity has remained the same in both the old and new situations.  This is because the technological innovation only affected Nets production, and not gun production.
+
+If we were to assume an improvement in gun production, then the curve might look more like this. For the purposes of the below example, we'll assume a non-linear improvement in gun production, in which productivity has improved most at the small scale, but high marginal costs hampers productivity at the large scale.
+
+
+```{r}
+temp$Guns[temp$situation == 'new']  <- 
+  temp$Guns[temp$situation == 'new'] ^ (seq(1.1,1, length = length(temp$Guns[temp$situation == 'new']))) * seq(1.5, 1, length = length(temp$Guns[temp$situation == 'new']))
+ggplot(data = temp,
+       aes(x = Nets,
+           y = Guns,
+           color = situation)) +
+  geom_point(alpha = 0.6) +
+  geom_line(alpha = 0.6) +
+  scale_colour_manual(name = 'Situation',
+                      values = c('red', 'blue')) +
+  theme_bw()
+```
+
+
+
+\begin{changemargin}{-1.5cm}{-1.5cm} 
+  \begin{tikzpicture}
+    \node [copy shadow={draw=almostblack,fill=almostblack,opacity=0.5,shadow xshift=1ex,
+           shadow yshift=-1ex},fill=grey ,draw=darkgrey,thick]
+            {\begin{minipage}{1.15\textwidth}
+            \vspace{2mm}
+            \textbf{Question 3:} \\
+
+In the graph representing demand and supply of bed Nets depict and describe what will happen if instead of producing q* (quantity of equilibrium) a lower quantity q*-10 would be produced. 
+            \vspace{2mm}
+            \end{minipage}};
+  \end{tikzpicture}
+\end{changemargin}
+
+In the above graphs, the quantity of equilibrium (QE) is a function of the cost (which we have invented) of each of the commodities, as well as the _price_. In this case, we'll assume that  
+
+- A unit of Nets costs $1 to produce and sells at $3  
+
+- A unit of Guns costs $2.50 to produce and sells at $5  
+
+With these assumptions, we can calculate the Profit at each point of the curve  
+
+```{r, results = 'asis'}
+temp <- temp[temp$situation == 'new',]
+temp$Profit <- (-1 * temp$Nets) + (3 * temp$Nets) +
+  (-1 * temp$Guns * 2.5) + (5 * temp$Guns)
+row.names(temp) <- NULL
+temp$situation <- NULL
+kable(head(temp))
+```
+
+(The above table is abridged - the full table is in the appendix.)  
+
+We calculate equilibrium (ie, the point of greatest Profit) to be at a production of 19 units of Nets and 60 units of Guns.  
+
+```{r}
+ggplot(data = temp,
+       aes(x = Nets,
+           y = Guns)) +
+  geom_point(alpha = 0.6) +
+  geom_line(alpha = 0.6) +
+  theme_bw() +
+  geom_point(data = temp[which.max(temp$Profit),],
+             aes(x = Nets,
+                 y = Guns),
+             size = 5,
+             color = 'red')
+```
+
+If we were to take the quantity of equilibrium of nets (19) and reduce production by 10 (to 9), we would end up with a situation in which either (a) productive potential was not being met or (b) resources could be redirected to the fabrication of guns.  In this specific example, in which the production cost of 1 net is $1, we would increase capacity by $10 and reduce revenue by $30, resulting in a profit loss of $20.  Were the cost reductions to be redirected towards productive capacity with guns, 4 could be produced, resulting in a revenue of $20.  Relative to Q, Q-10 (in nets), therefore, results in a lost profit of $10 (if. productive capacity shifts to guns) to $20 (if productive capacity is not fulfilled)
+
+
+\newpage  
+
+# Details  
+
+Full code for the production of this report is available at
+
+# Appendix  
+
+Full table from question number 3.
+
+```{r, results = 'asis'}
+# temp$situation <- NULL
+names(temp) <- capitalize(names(temp))
+# row.names(temp)  <- NULL
+kable(temp)
+```
