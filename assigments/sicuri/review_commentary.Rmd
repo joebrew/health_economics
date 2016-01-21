@@ -1,0 +1,36 @@
+---
+title: Review commentary of "Economic evaluation of Chagas disease screening of pregnant
+  Latin American women and of their infants in a non endemic area" (Sicuri et al)
+author: "Joe Brew"
+date: "January 21, 2016"
+output: pdf_document
+---
+
+(599 words)
+
+# Introduction  
+
+The evaluation, carried out by Sicuri et al, of screening Latin American pregant women and their infants for Chagas in a non-endemic area is a fine example of a data-driven approach to health policy.  It gracefully combines intuitive and non-convuluted methodology with clear documentation of calculations, while being explicit about assumptions and shortfalls.  Importantly, it also adds a reasoned argument in favor of nationality-based screening interventions, a contentious issue for which policy should be driven by data rather than ideology. 
+
+# What the authors get right    
+
+This paper is an examplary model of how health systems, particulary those which are publicly financed, should approach screening programs.  Not only do the authors take into account granular estimates on quality adjusted life years, they correctly include into the parameters of their model the most recent evidence available regarding sensitivity, specificify, and prevalence.  
+
+Furthermore, this paper should be applauded for being"translational".  The results not only establish the cost-effectiveness of the current approach, but also clearly delineate the limits of the current approach, highlighting a minimum prevalence, minimum verticla transmission rate, and maximum test cost needed to maintain cost-effectiveness.  
+
+Finally, the authors make a clear presentation of evidence.  Not only do the authors divide their method into two different models (newborn vs. mother), they also clearly demarcate the components, prices and probabilities that go into their calculations.  This makes their work easily reproducible, and will allow future scientists to build on (rather than re-invent) the methodologies used herein.
+
+# Where the paper could be improved  
+
+Quantifying the long-terms costs of Chagas treatment is difficult, particularly given that has only recently emerged as a major public health issue in Spain.  Though the authors' assessment of the costs of treatment have a solid foundation in the literature, they acknowledge that quantifying "the use of resources for Chagas treatment" could not be taken directly from patient records, and instead stems solely from "interviews with clinicians".  Though admirable in its attempt, basing the probability of necessitating a pace maker, Holter monitor or intestinal transit test (among others) solely on "clinical experience" is extremely problematic, and subject to a high degree of human bias.  For example, if the physician-assessed probability of an operatoin as expensive as a heart transplant were off by only 1%, this could have very significant implications for their cost model.  
+
+Additionally, though the rationale for the 10 euro screening test cost was explained (section 2.2), further detail is needed.  The authors should have either used actual health system financial data, or justified further why a self-reported "estimate" was necessary.  
+
+# Implications for policy  
+
+Sicuri et al make a strong, evidence-based case for the Spanish state to offer a targetted screening program to all Latin American women.  Policy-makers should take note.  However, if this policy were to be implemented in the short-term, it would not be without problems.  Specifically, to the extent that screening can be considered a health "service" with a value of some sort being transferred from the public health service to the individual being screened, questions of equal access and fairness come in to play.  Though economically beneficial, _denying_ access to free screening for women not of Latin American origin could be seen as discriminatory.  The unfairness of the issue would be particularly strong in the case of women with risk factors (ie, long-term residence in Latin America) who do not qualify for the free screening.  
+
+# Conclusion  
+
+Ultimately, the harm of unequal access should not overshadow the benefit of targetted interventions.  Sicuri's proposal should be implemented, albeit tailored to ensure that _all_ those who might benefit from such a screening are ensured access.  
+
